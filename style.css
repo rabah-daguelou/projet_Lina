@@ -1,0 +1,289 @@
+html {
+    overflow-x: hidden;
+   
+}
+body {
+    background-color: black; 
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI";
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:visited {
+    color: aqua;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+h2, h3 a {
+    color: white !important;
+}
+a:hover {
+    color: white;
+}
+
+/******* NavBar *******/
+nav{
+    background: rgb(74, 75, 75);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: calc(.5rem + 1.5vw);
+    border-bottom: 1px solid white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding-right: 10px;
+}
+
+#icons {
+    cursor: pointer;
+    display: none;
+}
+
+/*** slider et films trouvés ***/
+#divSliderAndFilmsFound {
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    
+}
+#divFilmsFoundImages {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#imageFound {
+    width: 100px;
+    height: 150px;
+    border: 2px solid gold;
+    
+}
+#divImage {
+  margin: 10px;
+  text-align: center;
+}
+#divImage img:hover {
+    transform: scale(1.1);
+    transition: .5s;
+    cursor: pointer;
+}
+/*** Slider automatique ****/
+
+#divSlider {
+    display: flex;
+    max-width: 190px;
+    height: 280px;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid rgb(50, 49, 49);;
+    position: relative;
+    transition: .5s;
+}
+#divSlider img {
+    width: 190px;
+    height: 100%;
+    object-fit: cover;
+    animation: slide 10s infinite;
+}
+/* Bouton recherche */
+#myInput {
+    
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 10%;
+}
+
+/**** Div Films trouvés ***/
+#divFilmsFound {
+    width: 60%;
+    background-color: rgb(40, 39, 39);
+    border: 2px solid rgb(50, 49, 49);
+}
+
+#divFilmsFound h2 {
+    margin-bottom: 20px;
+    background: linear-gradient( blue,  green,  yellow, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Message pas de film trouvés */
+#message {
+
+    text-align: center;
+    color: red;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-190px);
+    }
+    50% {
+        transform: translateX(-380px);
+    }
+    75% {
+        transform: translateX(-570px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+/****** Films *******/
+
+#films {
+   max-width: 100%;
+   background-color: rgb(40, 39, 39);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+   padding: 10px;
+   overflow-x: hidden;
+}
+
+.films h2 {
+    background-color: #444343;
+    padding: 10px;
+    border-top: 1px solid white;
+    letter-spacing: 10px;
+    text-shadow: 1px 1px 10px black;
+}
+#films img {
+    width: 120px;
+    height: 180px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 5%;
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+
+}
+#films img:hover {
+    transform: scale(1.05);
+}
+
+.slide_left, .slide_right {
+    background-color: rgb(41, 41, 41);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    
+    cursor: pointer;
+    text-align: center;
+    line-height: 18px;
+    border: 2px dashed white;
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-weight: 800;
+    top: 50%;
+    z-index: 1;
+    animation: color 1s infinite;
+}
+
+/* animation bordure flèches */
+@keyframes color {
+    0% {
+        border-color: blue;
+    }
+    25% {
+            border-color: green;
+        }
+    50% {
+        border-color: yellow;
+    }
+    75% {
+            border-color: red;
+        }
+    100% {
+        border-color: blue;
+    }
+}
+.slide_right {
+    right: 0px;
+}
+.slide_left {
+    left: 0;
+}
+h2 {
+    text-align: center;
+}
+/*** Médias Queries ***/
+
+@media (max-width: 768px) {
+    #icons {
+        display: block;
+    }
+    #icons:before {
+        content: "\2630";
+    }
+    .active #icons:before {
+        content: "\2715";
+        color: red;
+    }
+    nav ul {
+        position: absolute;
+        top:7.5%;
+        right: -100%;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgb(56, 55, 55);
+        width: 100%;
+        transition: .5s;
+        padding-right: 0px;
+    }
+    nav ul li {
+        padding: 10px;
+    }
+    nav li:hover {
+        background-color: rgb(116, 114, 114);
+    }
+    
+    nav.active ul {
+       right: 0px; 
+       
+    }
+   .slider {
+       margin-top: 200px!important; 
+       
+       transition: .5s;
+    }
+    input {
+        margin: 10px auto;
+    }
+
+}
+
+@media (max-width: 425px) {
+    #divSliderAndFilmsFound {
+        flex-direction: column;
+    }
+    #divFilmsFound{
+           margin-top: 10px;
+           width: 95%;
+        }
+}
