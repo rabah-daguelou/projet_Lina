@@ -247,7 +247,7 @@ h2 {
     }
     nav ul {
         position: absolute;
-        top:7.5%;
+        top:11%;
         right: -100%;
         flex-direction: column;
         text-align: center;

@@ -12,7 +12,7 @@ let myFilms = [
   "james.jpg",
   "zinder.jpg",
   "alice.jpg",
-  "alrawabischool.webp",
+
   "athena.jpg",
   "charlie.jpeg",
   "mercredi.jpg",
@@ -23,24 +23,21 @@ let mySeries = [
   "grita.jpg",
   
   "lupin.jpg",
-  "manifest.webp",
+  
 ];
 let myDocumentaires = [
   "monk.jpg",
-  "monsterhifh.webp",
-  "nature.webp",
+ 
+ 
   "predateur.jpg",
  
-  "psychose.webp",
+  
   "riverdale.jpg",
 ];
 let myAutres = [
   "riverdale.jpg",
   "smile.jpeg",
-  "smith.webp",
-  "titanic.webp",
-  "viceversa.webp",
-  "vinterviken.webp",
+  
 ];
 
 // Créer les boutons gauche / Droit
@@ -61,7 +58,7 @@ function injectFilms() {
 
   myFilms.forEach((film) => {
     let imageTag = document.createElement("img");
-    imageTag.src = "/images/" + film;
+    imageTag.src = "images/" + film;
     films.append(imageTag);
   });
 }
@@ -150,7 +147,7 @@ myInput.addEventListener("input", () => {
                 let filmImage = document.createElement("img");
             filmImage.setAttribute("id", "imageFound");
             
-            filmImage.src = `/images/${image}`;
+            filmImage.src = `images/${image}`;
             //
             let h4 = document.createElement('h4')
             h4.style.textAlign = 'center'
