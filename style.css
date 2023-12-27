@@ -39,7 +39,9 @@ nav{
     font-size: calc(.5rem + 1.5vw);
     border-bottom: 1px solid white;
 }
-
+nav h3 {
+    margin-right: 50px;
+}
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -154,7 +156,7 @@ nav ul {
 
 /****** Films *******/
 
-#films {
+#myFilms, #mySeries, #myDocs, #myAutres {
    max-width: 100%;
    background-color: rgb(40, 39, 39);
    display: flex;
@@ -165,24 +167,24 @@ nav ul {
    overflow-x: hidden;
 }
 
-.films h2 {
+section h2 {
     background-color: #444343;
     padding: 10px;
     border-top: 1px solid white;
     letter-spacing: 10px;
     text-shadow: 1px 1px 10px black;
 }
-#films img {
+section img {
     width: 120px;
     height: 180px;
-    border: 2px solid black;
+    border: 1px solid gold;
     margin: 10px;
     border-radius: 5%;
     box-shadow: 2px 2px 5px black;
     cursor: pointer;
 
 }
-#films img:hover {
+section img:hover {
     transform: scale(1.05);
 }
 
@@ -268,8 +270,7 @@ h2 {
        
     }
    .slider {
-       margin-top: 200px!important; 
-       
+       margin-top: 220px!important; 
        transition: .5s;
     }
     input {
