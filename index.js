@@ -130,8 +130,6 @@ function slideTo(sens, n) {
   let liste = AllLists[n];
   let div = myDivs[n];
 
-  console.log(liste);
-  console.log(div);
   if (sens == -1) {
     let first_image = liste.shift();
     liste.push(first_image);
@@ -166,7 +164,7 @@ message.textContent = "Aucun film ne correspond à votre recherche!";
 myInput.addEventListener("input", () => {
   let liste = [];
   divFilmsFound.innerHTML = "";
-
+    myInput.value= myInput.value.toLowerCase()
   // div des images
   let divFilmsFoundImages = document.createElement("div");
   divFilmsFoundImages.setAttribute("id", "divFilmsFoundImages");
@@ -176,7 +174,9 @@ myInput.addEventListener("input", () => {
 
   // Chercher les films correspondants
 
-  AllLists.forEach((element) => {
+    AllLists.forEach((element) => {
+        
+        
     element.forEach((film) => {
       if (film.startsWith(myInput.value)) {
         liste.push(film);
@@ -210,7 +210,6 @@ myInput.addEventListener("input", () => {
 
       // Si aucun film trouvé
     } else if (liste.length <1) {
-        console.log(liste);
         divFilmsFound.innerHTML = "";
         message.textContent = "Aucun film ne correspond à votre recherche!";
       divFilmsFound.appendChild(message);

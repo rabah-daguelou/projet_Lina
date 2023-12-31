@@ -1,5 +1,5 @@
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
    
 }
 body {
@@ -248,6 +248,7 @@ h2 {
         color: red;
     }
     nav ul {
+        
         position: absolute;
         top:11%;
         right: -100%;
@@ -255,8 +256,9 @@ h2 {
         text-align: center;
         background-color: rgb(56, 55, 55);
         width: 100%;
-        transition: .5s;
+        
         padding-right: 0px;
+        display: none;
     }
     nav ul li {
         padding: 10px;
@@ -266,7 +268,9 @@ h2 {
     }
     
     nav.active ul {
-       right: 0px; 
+        display: block;
+        right: 0px; 
+        transition: .5s;
        
     }
    .slider {
